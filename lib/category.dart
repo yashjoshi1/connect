@@ -4,8 +4,8 @@ import 'package:message/games.dart';
 
 class CategorySelector extends StatefulWidget {
   int selectedIndex;
+  
   final VoidCallback onCategorySelectorSelected;
-  final Function onChanged(int);
   CategorySelector(
       {required this.selectedIndex, required this.onCategorySelectorSelected});
   @override
