@@ -17,12 +17,6 @@ class Homescreen extends StatefulWidget {
 class _HomescreenState extends State<Homescreen> {
   int selectedIndex = 0;
 
-  // VoidCallback callback(int index) {
-  //   setState(() {
-  //     selected = index;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -53,8 +47,11 @@ class _HomescreenState extends State<Homescreen> {
         children: [
           CategorySelector(
             selectedIndex: selectedIndex,
-            onCategorySelectorSelected: () {
-              Games();
+            indexChanged: (p0, p1) {
+              setState(() {
+                selectedIndex = p0;
+              });
+              print(p1);
             },
           ),
           Expanded(

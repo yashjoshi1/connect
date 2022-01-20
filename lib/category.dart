@@ -4,10 +4,8 @@ import 'package:message/games.dart';
 
 class CategorySelector extends StatefulWidget {
   int selectedIndex;
-  
-  final VoidCallback onCategorySelectorSelected;
-  CategorySelector(
-      {required this.selectedIndex, required this.onCategorySelectorSelected});
+  final Function(int, String) indexChanged;
+  CategorySelector({required this.selectedIndex, required this.indexChanged});
   @override
   _CategorySelectorState createState() => _CategorySelectorState();
 }
@@ -25,7 +23,7 @@ class _CategorySelectorState extends State<CategorySelector> {
           itemBuilder: (BuildContext Context, int index) {
             return GestureDetector(
               onTap: () {
-
+                widget.indexChanged(index, "helo");
               },
               child: Padding(
                 padding:
